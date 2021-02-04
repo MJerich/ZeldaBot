@@ -5,5 +5,4 @@ ffplay.exe
 ffprobe.exe
 song.mp3
 remindTest.py
-__pycache__/musicBotHelper.cpython-38.pyc
 *.pyc
