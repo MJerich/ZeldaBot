@@ -4,7 +4,6 @@ import os
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='*', case_insensitive=True)
 # function to check if the bot is already connected to the voice channel
 def is_connected(ctx):
     voice_client = discord.utils.get(ctx.bot.voice_clients)
@@ -15,7 +14,7 @@ class musicCommands(commands.Cog):
         self.bot = bot
 
     # play command, must be followed with a youtube url
-    @bot.command(name='play', hidden=True)
+    @commands.command(name='play')
     async def play(self, ctx, url: str):
         songPlaying = os.path.isfile('song.mp3')
         try:
@@ -47,7 +46,7 @@ class musicCommands(commands.Cog):
         ctx.voice_client.play(discord.FFmpegPCMAudio('song.mp3'))
 
     # make bot leabve the voice channel
-    @bot.command(name='leave', hidden=True)
+    @commands.command(name='leave')
     async def leave(self, ctx):
         if ctx.voice_client.is_connected():
             await ctx.voice_client.disconnect()
@@ -55,7 +54,7 @@ class musicCommands(commands.Cog):
             await ctx.send('The bot is not in a voice channel.')
 
     # pause the music
-    @bot.command(name='pause', hidden=True)
+    @commands.command(name='pause')
     async def pause(self, ctx):
         if ctx.voice_client.is_playing():
             ctx.voice_client.pause()
@@ -63,7 +62,7 @@ class musicCommands(commands.Cog):
             await ctx.send('Nothing is playing.')
 
     #resume the music after pausing
-    @bot.command(name='resume', hidden=True)
+    @commands.command(name='resume')
     async def resume(self, ctx):
         if ctx.voice_client.is_paused():
             ctx.voice_client.resume()
@@ -71,7 +70,7 @@ class musicCommands(commands.Cog):
             await ctx.send('Audio is already playing.')
 
     # stop the music
-    @bot.command(name='stop', hidden=True)
+    @commands.command(name='stop')
     async def stop(self, ctx):
         if ctx.voice_client.is_playing():
             ctx.voice_client.stop()

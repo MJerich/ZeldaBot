@@ -14,9 +14,9 @@ myGuild = os.getenv('DISCORD_GUILD')
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
-initial_extensions = ['cog.musicBotHelper']
+initial_extensions = ['cog.standardCog', 'cog.musicBotCog']
 
-bot = commands.Bot(command_prefix='*', case_insensitive=True)
+bot = commands.Bot(command_prefix='!', case_insensitive=True)
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
