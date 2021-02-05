@@ -1,7 +1,6 @@
 # main.py
 import os
 import discord
-import youtube_dl
 import onMessageHelper
 import sys
 import traceback
