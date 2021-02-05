@@ -20,9 +20,11 @@ async def userMessage(message, bot):
     if message.content.lower() == '!joke':
         await jokesFunction(message, bot)
 
-    # will allow bot.commands if i add them later
-    await bot.process_commands(message)
+    if message.content.lower() == '!help' or message.content.lower() == '!commands':
+        await helpFunction(message, bot)
 
+
+# YMH quote function
 async def ymhFunction(message, bot):
     ymhQuotes = ['"What\'s up there chomo?"', '"You just lost your life."', '"You\'re fired ok, you didn\'t follow proto."',
                  '"Imagine a pig with tits."', '"Come on Mark, don\'t be stingy."', '"Just let me eat ya."', '"Who is Randy?"',
@@ -31,7 +33,7 @@ async def ymhFunction(message, bot):
     YHMresponce = random.choice(ymhQuotes)
     await message.channel.send(YHMresponce)
 
-
+# joke function
 async def jokesFunction(message, bot):
     jokes = ['Why did the scarecrow win an award? Because he was outstanding in his field.',
              'What\'s brown and sticky? A stick.', 'What do you call a fake noodle? An Impasta.', 'I would avoid the sushi if I was you. It\'s a little fishy.',
@@ -46,7 +48,7 @@ async def jokesFunction(message, bot):
     JOKEresponce = random.choice(jokes)
     await message.channel.send(JOKEresponce)
 
-
+# help function
 async def helpFunction(message, bot):
     await message.channel.send(
         '''```
@@ -55,10 +57,10 @@ Standard commands:
     !joke: Will tell you a funy joke!
     !ymh: Will give you a funny joke from "Your Mom's House Podcast"
 Music Bot commands:
-    !play: Play a song in the music channel, must be followed by a youtube url.
-    !pause: Pause music in the music channel.
-    !resume: Resume playing music after pausing in the music channel.
-    !stop: Stop the current song playing in the music channel.
-    !leave: Make the bot leave the music channel.
+    *play: Play a song in the music channel, must be followed by a youtube url.
+    *pause: Pause music in the music channel.
+    *resume: Resume playing music after pausing in the music channel.
+    *stop: Stop the current song playing in the music channel.
+    *leave: Make the bot leave the music channel.
 ```'''
     )
