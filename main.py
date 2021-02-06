@@ -7,19 +7,18 @@ import traceback
 from dotenv import load_dotenv
 from discord.ext import commands
 
+# import token from env file
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
-myGuild = os.getenv('DISCORD_GUILD')
 
-# Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
-# Think of it like a dot path import
-initial_extensions = ['cog.standardCog', 'cog.musicBotCog']
+# import our cogs
+cogsList = ['cog.standardCog', 'cog.musicBotCog']
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
 
-# Here we load our extensions(cogs) listed above in [initial_extensions].
+# load our cogs listed above in [cogsList].
 if __name__ == '__main__':
-    for extension in initial_extensions:
+    for extension in cogsList:
         bot.load_extension(extension)
 
 # connect the bot to discord
@@ -35,5 +34,5 @@ async def on_message(message):
 
 
 
-#client.run(token)
+# run the bot
 bot.run(token)

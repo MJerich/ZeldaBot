@@ -6,3 +6,5 @@ ffprobe.exe
 song.mp3
 remindTest.py
 *.pyc
+remindMeTest/remindDB.db
+remindDB.db
