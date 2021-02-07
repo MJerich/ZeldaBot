@@ -2,8 +2,6 @@
 import os
 import discord
 import onMessageHelper
-import sys
-import traceback
 from dotenv import load_dotenv
 from discord.ext import commands
 
@@ -12,7 +10,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
 # import our cogs
-cogsList = ['cog.standardCog', 'cog.musicBotCog']
+cogsList = ['cog.standardCog', 'cog.musicBotCog', 'cog.remindCog']
 
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)

@@ -7,3 +7,4 @@ song.mp3
 remindTest.py
 *.pyc
 *.db
+*.db-journal
