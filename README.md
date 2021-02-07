@@ -9,3 +9,8 @@ Current Features:
     YMH Quote: type !ymh for a funny quote from "Your Mom's House Podcast"
 
     Music Player: will take the audio from a youtube video and play it in the music channel.
+
+
+Features I want to add:
+
+    Remind Me: I want to add a !RemindMe command that users can use to get a reminder after a specified amount of time.

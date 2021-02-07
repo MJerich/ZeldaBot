@@ -7,6 +7,24 @@ class standardCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # custom formatted !help command
+    @commands.command(name='help')
+    async def helpFunction(self, ctx):
+        await ctx.send(
+'''```
+Standard commands:
+    !help: Will bring you here.
+    !joke: Will tell you a funy joke!
+    !ymh: Will give you a funny joke from "Your Mom's House Podcast"
+Music Bot commands:
+    !play: Play a song in the music channel, must be followed by a youtube url.
+    !pause: Pause music in the music channel.
+    !resume: Resume playing music after pausing in the music channel.
+    !stop: Stop the current song playing in the music channel.
+    !leave: Make the bot leave the music channel.
+```'''
+        )
+
     # YMH quote
     @commands.command(name='ymh')
     async def ymhFunction(self, ctx):
@@ -32,6 +50,7 @@ class standardCommands(commands.Cog):
                 'A Buddhist walks up to a hot dog stand and says, "Make me one with everything."', 'Did you hear about the guy who lost the left side of his body? He\'s alright now.']
         JOKEresponce = random.choice(jokes)
         await ctx.send(JOKEresponce)
+
 
 def setup(bot):
     bot.add_cog(standardCommands(bot))

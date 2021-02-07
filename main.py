@@ -14,7 +14,8 @@ token = os.getenv('DISCORD_TOKEN')
 # import our cogs
 cogsList = ['cog.standardCog', 'cog.musicBotCog']
 
-bot = commands.Bot(command_prefix='!', case_insensitive=True)
+
+bot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
 
 # load our cogs listed above in [cogsList].
 if __name__ == '__main__':
@@ -24,6 +25,7 @@ if __name__ == '__main__':
 # connect the bot to discord
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Streaming(name='type "!help"', url='https://www.twitch.tv/MattyReign'))
     print(f'{bot.user.name} has connected to Discord!')
 
 # function for standard commands
