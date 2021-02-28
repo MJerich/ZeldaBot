@@ -24,9 +24,9 @@ Music Bot commands:
     !leave: Make the bot leave the music channel.
 RemindMe commands:
     !RemindMe: will make a reminder you and anyone/role you tag.
-            format: !RemindMe (number) (s, m, h, or d for seconds, minutes,
+            format: !RemindMe (number) (seconds, minutes,
                     hours, or days) (your message)
-            Example: !RemindMe 2 d DnD tonight at 8pm dont forget! @DnD role
+            Example: !RemindMe 2 days DnD tonight at 8pm dont forget! @DnD role
             will respond: "@yourname: DnD tonight at 8pm dont forget! @DnD role"
                         in 2 days
 ```'''
