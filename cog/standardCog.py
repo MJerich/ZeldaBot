@@ -16,6 +16,7 @@ Standard commands:
     !help: Will bring you here.
     !joke: Will tell you a funy joke!
     !ymh: Will give you a funny joke from "Your Mom's House Podcast"
+    !flip: Flip a coin and get a "Heads" or "Tails" responce.
 Music Bot commands:
     !play: Play a song in the music channel, must be followed by a youtube url.
     !pause: Pause music in the music channel.
@@ -57,6 +58,13 @@ RemindMe commands:
                 'A Buddhist walks up to a hot dog stand and says, "Make me one with everything."', 'Did you hear about the guy who lost the left side of his body? He\'s alright now.']
         JOKEresponce = random.choice(jokes)
         await ctx.send(JOKEresponce)
+
+    #coin flip
+    @commands.command(name='flip')
+    async def coinFlip(self, ctx):
+        headOrTail = ['Heads', 'Tails']
+        filpResponce = random.choice(headOrTail)
+        await ctx.send(filpResponce)
 
 
 def setup(bot):

@@ -11,3 +11,5 @@
     Music Player: will take the audio from a youtube video and play it in the music channel.
 
     Remind Me: will make a reminder you and anyone/role you tag.
+
+    Coin Flip: get a random responce of "Heads" or "Tails"
