@@ -8,3 +8,4 @@ remindTest.py
 *.pyc
 *.db
 *.db-journal
+remindMeTest
