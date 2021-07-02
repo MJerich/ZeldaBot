@@ -9,6 +9,7 @@ def is_connected(ctx):
     voice_client = discord.utils.get(ctx.bot.voice_clients)
     return voice_client and voice_client.is_connected()
 
+# variables for 'Bot-Command-Channel' and wrong channel responce
 botCC = 801828129068023809
 wrngChannel = f'Please use music bot commands in <#{botCC}>'
 
