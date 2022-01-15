@@ -1,4 +1,4 @@
-# ReignBot
+# ZeldaBot
  
 ## This is a Discord bot I am making/developing for fun and to practice my python skills.
 
