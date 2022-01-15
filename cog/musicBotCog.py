@@ -34,6 +34,8 @@ class musicCommands(commands.Cog):
             if not is_connected(ctx):
                 await voiceChannel.connect()
 
+                await ctx.send(f'Downloading...')
+
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
