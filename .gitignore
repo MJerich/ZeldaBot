@@ -1,0 +1,4 @@
+*.exe
+.env
+*.mp3
+*.pyc
