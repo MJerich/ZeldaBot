@@ -3,6 +3,7 @@ import youtube_dl
 import os
 import discord
 from discord.ext import commands
+import time
 
 # function to check if the bot is already connected to the voice channel
 def is_connected(ctx):
@@ -34,21 +35,27 @@ class musicCommands(commands.Cog):
             if not is_connected(ctx):
                 await voiceChannel.connect()
 
+            #voice = discord.utils.get(ctx.bot.voice_clients, guild=ctx.guild)
+
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
-                    'preferredquality': '192',
                 }]
             }
+            await ctx.send('downloading...')
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
             for file in os.listdir('./'):
                 if file.endswith('.mp3'):
                     os.rename(file, 'song.mp3')
 
-            ctx.voice_client.play(discord.FFmpegPCMAudio('song.mp3'))
+            
+            ctx.voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+            
+
+            
         else:
             #command attempted in non command channel - redirect user
             await ctx.message.channel.send(wrngChannel)
