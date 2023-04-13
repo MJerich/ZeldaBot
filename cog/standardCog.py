@@ -17,12 +17,6 @@ Standard commands:
     !joke: Will tell you a funy joke!
     !ymh: Will give you a funny joke from "Your Mom's House Podcast"
     !flip: Flip a coin and get a "Heads" or "Tails" responce.
-Music Bot commands:
-    !play: Play a song in the music channel, must be followed by a youtube url.
-    !pause: Pause music in the music channel.
-    !resume: Resume playing music after pausing in the music channel.
-    !stop: Stop the current song playing in the music channel.
-    !leave: Make the bot leave the music channel.
 RemindMe commands:
     !RemindMe: will make a reminder you and anyone/role you tag.
             format: !RemindMe (number) (seconds, minutes,
