@@ -1,7 +1,4 @@
 # remindCog.py
-
-import os
-import discord
 from asyncio import sleep as s
 from discord.ext import commands
 
