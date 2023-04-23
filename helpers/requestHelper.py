@@ -24,9 +24,15 @@ def aiChat(chatMessage):
         "Authorization": f"{secret}"
     }
 
-    response = requests.request("POST", url, json=payload, headers=headers).json()
-    choices = response["choices"]
-    messageList = choices[0]
-    message = messageList["message"]
-
-    return message['content']
+    response = requests.request("POST", url, json=payload, headers=headers)
+    if response.status_code == 200:
+        choices = response.json()["choices"]
+        messageList = choices[0]
+        message = messageList["message"]
+        return message['content']
+    elif response.status_code == 404:
+        return "ChatGPT responded with a 404"
+    elif response.status_code == 503:
+        return "ChatGPT responded with a 503"
+    else:
+        return "Sorry, somthing went wrong."
