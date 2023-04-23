@@ -1,5 +1,4 @@
 # onMessage.py
-import discord
 from discord.ext import commands
 import random
 
@@ -19,6 +18,7 @@ Standard commands:
     !joke: Will tell you a funny joke!
     !ymh: Will give you a funny joke from "Your Mom's House Podcast"
     !flip: Flip a coin and get a "Heads" or "Tails" response.
+    !ai {your message here}: Will send your message to ChatGPT-3 and then give you it's response.
 RemindMe commands:
     !RemindMe: will make a reminder you and anyone/role you tag.
             format: !RemindMe (number) (seconds, minutes,

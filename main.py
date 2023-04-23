@@ -2,7 +2,7 @@
 import asyncio
 import os
 import discord
-import onMessageHelper
+from helpers import onMessageHelper
 from dotenv import load_dotenv
 from discord.ext import commands
 
@@ -11,20 +11,14 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
 # set variables
-cogsList = ['cog.standardCog', 'cog.remindCog']
+cogsList = ['cog.standardCog', 'cog.remindCog', 'cog.openaiCog']
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
-
 zeldaBot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)
 
 
-# setup cogs
-# class zeldaBot(commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)):
-#     async def setup_hook(self):
-#         await self.load_extension(name='cog.standardCog')
-#         print('Successfully loaded cogs')
-
+# set up cogs then start the bot
 async def start():
     async with zeldaBot:
         for extension in cogsList:
