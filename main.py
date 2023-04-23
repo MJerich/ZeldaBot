@@ -18,6 +18,7 @@ intents.message_content = True
 zeldaBot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)
 
 
+# set up cogs then start the bot
 async def start():
     async with zeldaBot:
         for extension in cogsList:
