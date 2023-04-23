@@ -1,4 +1,5 @@
 # main.py
+import asyncio
 import os
 import discord
 import onMessageHelper
@@ -9,30 +10,42 @@ from discord.ext import commands
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
-# import our cogs
+# set variables
 cogsList = ['cog.standardCog', 'cog.remindCog']
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
+
+zeldaBot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)
 
 
-bot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
+# setup cogs
+# class zeldaBot(commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)):
+#     async def setup_hook(self):
+#         await self.load_extension(name='cog.standardCog')
+#         print('Successfully loaded cogs')
 
-# load our cogs listed above in [cogsList].
-if __name__ == '__main__':
-    for extension in cogsList:
-        bot.load_extension(extension)
+async def start():
+    async with zeldaBot:
+        for extension in cogsList:
+            await zeldaBot.load_extension(extension)
+        await zeldaBot.start(token)
 
-# connect the bot to discord
-@bot.event
+
+# setup when the bot starts
+@zeldaBot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Streaming(name='type "!help"', url='https://www.twitch.tv/MattyReign'))
-    print(f'{bot.user.name} has connected to Discord!')
+    await zeldaBot.change_presence(activity=discord.Streaming(name='type "!help"', url='https://www.twitch.tv'
+                                                                                       '/MattyReign'))
+    print(f'{zeldaBot.user.name} has connected to Discord!')
 
-# function for standard commands
-@bot.event
+
+# function to load adn watch for non-standard commands
+@zeldaBot.event
 async def on_message(message):
-    await onMessageHelper.userMessage(message, bot)
-    await bot.process_commands(message)
-
+    await onMessageHelper.userMessage(message, zeldaBot)
+    await zeldaBot.process_commands(message)
 
 
 # run the bot
-bot.run(token)
+asyncio.run(start())
