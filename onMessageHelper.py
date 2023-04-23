@@ -2,8 +2,9 @@
 import discord
 from discord.ext import commands
 
+
 async def userMessage(message, bot):
-    # wont reply to self
+    # won't reply to self
     if message.author == bot.user:
         return
 
