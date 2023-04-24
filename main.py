@@ -9,13 +9,14 @@ from discord.ext import commands
 # import token from env file
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
+command_prefix = os.getenv('COMMAND_PREFIX')
 
 # set variables
 cogsList = ['cog.standardCog', 'cog.remindCog', 'cog.openaiCog']
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
-zeldaBot = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None, intents=intents)
+zeldaBot = commands.Bot(command_prefix=command_prefix, case_insensitive=True, help_command=None, intents=intents)
 
 
 # set up cogs then start the bot

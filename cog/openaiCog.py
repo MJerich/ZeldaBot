@@ -11,7 +11,7 @@ class openaiCommands(commands.Cog):
     @commands.command(name='ai')
     async def coinFlip(self, ctx, *, message: str):
         msg = await ctx.send("getting your response...")
-        aiResponse = requestHelper.aiChat(message)
+        aiResponse = requestHelper.aiChat(chatMessage=message)
         await msg.edit(content=aiResponse)
 
 

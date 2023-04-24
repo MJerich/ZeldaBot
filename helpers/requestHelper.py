@@ -26,10 +26,8 @@ def aiChat(chatMessage):
 
     response = requests.request("POST", url, json=payload, headers=headers)
     if response.status_code == 200:
-        choices = response.json()["choices"]
-        messageList = choices[0]
-        message = messageList["message"]
-        return message['content']
+        message = response.json()["choices"][0]["message"]['content']
+        return message
     elif response.status_code == 404:
         return "ChatGPT responded with a 404"
     elif response.status_code == 503:
