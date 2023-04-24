@@ -2,7 +2,7 @@
 
 ![supported Python versions](https://img.shields.io/pypi/pyversions/discord.py.svg)
 
-# Current Features:
+## Current Features:
 - Joke Teller: Type '!joke' for a funny dad joke
 - YMH Quote: Type '!ymh' for a funny quote from "Your Mom's House Podcast"
 - Coin Flip: Type '!flip' to get a random response of "Heads" or "Tails"
