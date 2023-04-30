@@ -35,7 +35,8 @@ class remindMe(commands.Cog):
             await remindResponse
 
         else:
-            await ctx.send(f'{ctx.author.mention}, Your reminder was NOT formatted correctly.')
+            await ctx.send(f'{ctx.author.mention}, Your reminder was NOT formatted correctly. Try using the "!help" '
+                           f'command to see how it should be formatted.')
 
 
 async def setup(bot):

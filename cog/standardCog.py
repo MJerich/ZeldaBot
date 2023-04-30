@@ -5,7 +5,6 @@ import random
 
 class standardCommands(commands.Cog):
     def __init__(self, bot):
-
         self.bot = bot
 
     # custom formatted !help command
@@ -38,8 +37,9 @@ RemindMe commands:
                      '"Who is Randy?"',
                      '"Your mom in the fuckin stands!"', '"Try it out."', '"You\'ll cum in 4 strokes."',
                      '"Bert is fat."',
-                     '"Okay, but would you marry your mom?"', '"Just Glassin\'"', '"10-12 Benadryl"',
-                     '"Good morning Julia."']
+                     '"I asked him, would you ever date your mom?"', '"Just Glassin\'"',
+                     '"Good morning Julia."', '"Let\'s go full trottle."', '"cool stuff, neat stuff, slick stuff"',
+                     '"I\'m a hot white trash cum dump, let\'s fuck."']
         YHMResponse = random.choice(ymhQuotes)
         await ctx.send(YHMResponse)
 
