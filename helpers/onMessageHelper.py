@@ -10,4 +10,5 @@ async def userMessage(message, bot):
 
     # cloud to butt translator
     if 'cloud' in message.content.lower():
-        await message.channel.send('Did you mean butt(s)?')
+        if message.author != 'l0xzer#0':
+            await message.channel.send('Did you mean butt(s)?')
