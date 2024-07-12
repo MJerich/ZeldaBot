@@ -25,6 +25,12 @@ def aiChat(chatMessage):
     }
 
     response = requests.request("POST", url, json=payload, headers=headers)
+    with open("logs/logs.txt", "a") as logs:
+        logs.write(
+            f'''{str(response.json())}
+             
+            '''
+        )
     if response.status_code == 200:
         message = response.json()["choices"][0]["message"]['content']
         return message
